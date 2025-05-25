@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Agenda do Estudante</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Agenda do Estudante</h1>
+        <nav>
+            <ul>
+                <li><a href="#atividades">Atividades</a></li>
+                <li><a href="#anotacoes">Anotações</a></li>
+                <li><a href="#faltas">Faltas</a></li>
+                <li><a href="#logout" onclick="logout()">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="atividades" class="card">
+            <h2>Atividades</h2>
+            <input type="text" id="novaAtividade" placeholder="Digite uma nova atividade">
+            <button onclick="adicionarAtividade()">Adicionar</button>
+            <ul id="listaAtividades"></ul>
+        </section>
+
+        <section id="anotacoes" class="card">
+            <h2>Anotações</h2>
+            <textarea id="campoAnotacoes" rows="10" placeholder="Escreva suas anotações aqui..."></textarea>
+            <button onclick="salvarAnotacoes()">Salvar</button>
+            <button onclick="exportarPDF()">Exportar como PDF</button>
+        </section>
+
+        <section id="faltas" class="card">
+            <h2>Controle de Faltas</h2>
+            <input type="text" id="materiaNome" placeholder="Nome da matéria">
+            <input type="number" id="totalAulas" placeholder="Total de aulas">
+            <input type="number" id="aulasFaltadas" placeholder="Aulas faltadas">
+            <button onclick="calcularFaltas()">Calcular</button>
+            <div id="resultadoFaltas"></div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
